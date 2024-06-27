@@ -12,18 +12,48 @@
   <body>
     <div class="container mt-2">
 
-      <div class="alert alert-danger">
-        Tarefa <a href="#" class="alert-link"> concluída </a> com successo.
-      </div>
-      <div class="alert alert-warning alert-dismissible fade show" role="alert">
-        <h1><label class="badge bg-danger"> Erro </label> <h1>Um erro ocorreu durante o processamento
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      </div>
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal-1">
+        Desativar
+      </button>
 
+      <div class="modal fade" id="Modal-1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">sem nome</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <button type="button" 
+      class="btn btn-lg btn-danger" 
+      data-bs-toggle="popover"
+      data-bs-title="Popover title" 
+      data-bs-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button>
+      
+      <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Tooltip on top">
+        Tooltip on top
+      </button>
       
     
       </div>
     <div>
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossozrigin="anonymous"></script>
+     <script>
+      const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+      const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+     </script>
   </body>
 </html>
